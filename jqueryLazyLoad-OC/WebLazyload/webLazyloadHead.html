@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style>
+        p img {
+            text-indent: 0;
+        }
+    
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+    </style>
+            
+    <script src='jquery-2.2.0.js'></script>
+    <script src='jquery.lazyload.js'></script>
+    
+    <script type='text/javascript'>
+        function loadImages(params) {
+              $("img").lazyload({
+                placeholder : 'holder.png',  /* 占位图 */
+                threshold : 200,  /* 距离可视范围200位置处开始下载 */
+                failure_limit : 3,  /* 最大不在加载范围图片数, 主要是瀑布流布局时设置 */
+                effect: "fadeIn"  /* 图片加载方式-淡入 */
+                });
+              }
+    </script>
+</head>
+<body>
+    
+    <div class='text-content'>
+        {{Content_holder}}
+    </div>
+    
+</body>
+</html>
